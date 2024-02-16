@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import UrlService from '../../network/services/UrlService';
+import { onlineUrl } from '../../constants/Constants';
 
 export class Main extends Component {
     constructor(props) {
@@ -63,7 +64,7 @@ export class Main extends Component {
 
     paste = () => {
         this.setState({ isLoadings: true });
-        navigator.clipboard.writeText("https://url-8b9l.onrender.com/api/url/"+this.state.urls.shortUrl);
+        navigator.clipboard.writeText(onlineUrl+"/api/url/"+this.state.urls.shortUrl);
         this.setState({ isLoadings: false });
         this.setState({ copy: "Copié" });
 
@@ -109,7 +110,7 @@ export class Main extends Component {
                                     this.state.showMessage ? (
                                         <div>
                                             <h4 className="title" style={{ marginTop: "40px" }}><a href="">Votre Url raccourcis : </a></h4>
-                                            <span>https://url-8b9l.onrender.com/api/{this.state.urls.shortUrl}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>{{onlineUrl}}/api/{this.state.urls.shortUrl}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             {
                                                 this.state.isLoadings ? (
 
