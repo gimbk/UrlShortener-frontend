@@ -5,12 +5,12 @@ const apiUrlSecure = 'http://127.0.0.1:9001/api';
 export const MEDIA_URL = apiUrl + "/uploads/";
 const backendsUrls = {
     Url: {
-        all: apiUrl + "/url/all",
-        findOne: apiUrl + "/url/check",
-        update: apiUrl + "/url/update",
-        delete: apiUrl + "/url/delete/",
-        shorten: apiUrl + "/url/shorten",
-        longen: apiUrl + "/url/",
+        all: apiUrl + "/api/url/all",
+        findOne: apiUrl + "/api/url/check",
+        update: apiUrl + "/api/url/update",
+        delete: apiUrl + "/api/url/delete/",
+        shorten: apiUrl + "/api/url/shorten",
+        longen: apiUrl + "/api/url/",
     },
 }
 export default backendsUrls;

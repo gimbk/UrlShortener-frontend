@@ -63,7 +63,7 @@ export class Main extends Component {
 
     paste = () => {
         this.setState({ isLoadings: true });
-        navigator.clipboard.writeText("http://localhost:9002/api/url/"+this.state.urls.shortUrl);
+        navigator.clipboard.writeText("https://url-8b9l.onrender.com/api/url/"+this.state.urls.shortUrl);
         this.setState({ isLoadings: false });
         this.setState({ copy: "Copied" });
 
