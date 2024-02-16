@@ -46,7 +46,7 @@ export class Main extends Component {
 
     paste = () => {
         this.setState({ isLoadings: true });
-        navigator.clipboard.writeText(onlineUrl + "/api/url/" + this.state.urls.shortUrl);
+        navigator.clipboard.writeText(onlineUrl + "/" + this.state.urls.shortUrl);
         this.setState({ isLoadings: false });
         this.setState({ copy: "Copié" });
 
@@ -96,7 +96,7 @@ export class Main extends Component {
                                     this.state.showMessage ? (
                                         <div>
                                             <h4 className="title" style={{ marginTop: "40px" }}><a href="">Votre Url raccourcis : </a></h4>
-                                            <span>{this.state.urlVar}/api/{this.state.urls.shortUrl}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>{this.state.urlVar}/{this.state.urls.shortUrl}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             {
                                                 this.state.isLoadings ? (
 
