@@ -65,7 +65,7 @@ export class Main extends Component {
         this.setState({ isLoadings: true });
         navigator.clipboard.writeText("https://url-8b9l.onrender.com/api/url/"+this.state.urls.shortUrl);
         this.setState({ isLoadings: false });
-        this.setState({ copy: "Copied" });
+        this.setState({ copy: "Copié" });
 
     };
 
@@ -109,7 +109,7 @@ export class Main extends Component {
                                     this.state.showMessage ? (
                                         <div>
                                             <h4 className="title" style={{ marginTop: "40px" }}><a href="">Votre Url raccourcis : </a></h4>
-                                            <span>http://localhost:9002/api/{this.state.urls.shortUrl}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>https://url-8b9l.onrender.com/api/{this.state.urls.shortUrl}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             {
                                                 this.state.isLoadings ? (
 
