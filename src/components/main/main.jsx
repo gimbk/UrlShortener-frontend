@@ -16,7 +16,8 @@ export class Main extends Component {
             shortUrl: "",
             originUrl: "",
             showMessage: false,
-            message: ""
+            message: "",
+            urlVar:""
         };
     }
     handleFormChange = (e) => {
@@ -70,6 +71,10 @@ export class Main extends Component {
 
     };
 
+    componentDidMount() {
+        this.setState({urlVar:onlineUrl})
+    }
+
     render() {
         return (
             <main id="main">
@@ -110,7 +115,7 @@ export class Main extends Component {
                                     this.state.showMessage ? (
                                         <div>
                                             <h4 className="title" style={{ marginTop: "40px" }}><a href="">Votre Url raccourcis : </a></h4>
-                                            <span>{{onlineUrl}}/api/{this.state.urls.shortUrl}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span>{this.state.urlVar}/api/{this.state.urls.shortUrl}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             {
                                                 this.state.isLoadings ? (
 
