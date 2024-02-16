@@ -7,17 +7,17 @@ export class Main extends Component {
         super(props);
         this.state = {
             urls: [],
-            urlCheck:[],
+            urlCheck: [],
             isLoadingInfoShow: false,
             isLoading: false,
             isLoadings: false,
             id: null,
-            copy:"Copier",
+            copy: "Copier",
             shortUrl: "",
             originUrl: "",
             showMessage: false,
             message: "",
-            urlVar:""
+            urlVar: ""
         };
     }
     handleFormChange = (e) => {
@@ -30,49 +30,30 @@ export class Main extends Component {
         this.setState({ isLoading: true });
         //let longUrl =this.state.originUrl
         let url = {
-           longUrl: this.state.originUrl
+            longUrl: this.state.originUrl
         }
 
-        UrlService.findOneUrl(url, (response) => {
-            this.setState({
-                isLoading: false,
-                urlCheck: response
-            });
-        });
-
-        if(this.state.urlCheck == null){
-            UrlService.shorten(url, (response) => {
-                this.setState({
-                    isLoading: false,
-                    showMessage: true,
-                    message: response.message,
-                    color: "#47a44b",
-                    urls: response.data[0]
-                });
-            });
-        }else{
-            
+        UrlService.shorten(url, (response) => {
             this.setState({
                 isLoading: false,
                 showMessage: true,
-                color: "#47a44b",
-                urls: this.state.urlCheck
+                message: response.message,
+                urls: response.data[0]
             });
-        }
-
+        });
 
     };
 
     paste = () => {
         this.setState({ isLoadings: true });
-        navigator.clipboard.writeText(onlineUrl+"/api/url/"+this.state.urls.shortUrl);
+        navigator.clipboard.writeText(onlineUrl + "/api/url/" + this.state.urls.shortUrl);
         this.setState({ isLoadings: false });
         this.setState({ copy: "Copié" });
 
     };
 
     componentDidMount() {
-        this.setState({urlVar:onlineUrl})
+        this.setState({ urlVar: onlineUrl })
     }
 
     render() {
