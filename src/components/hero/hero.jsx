@@ -8,7 +8,7 @@ export class Hero extends Component {
 
                     <div className="carousel-item active" style={{ marginTop: "60px" }}>
                         <div className="carousel-container">
-                            <h2 className="animate__animated animate__fadeInDown">Bienvenu sur <span>ShortnGo</span></h2>
+                            <h2 className="animate__animated animate__fadeInDown">Bienvenue sur <span>ShortnGo</span></h2>
                             <p className="animate__animated animate__fadeInUp">
                                 Le site de raccourcissement d'URL ShortnGo
                                 simplifie les liens longs en générant
